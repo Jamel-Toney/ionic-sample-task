@@ -1,0 +1,20 @@
+<ion-header>  
+  <ion-toolbar>  
+    <ion-title>Modal Content</ion-title>  
+    <ion-icon name='close-circle' (click)='dismiss()' style='float: right;'></ion-icon>  
+  </ion-toolbar>  
+</ion-header>  
+  
+<ion-content>  
+  <ion-list>  
+    <ion-item *ngFor="let item of (results | async)">
+      <ion-avatar slot="start">  
+        <img [src]="item.avatar" *ngIf="item.avatar != 'N/A'">
+      </ion-avatar>  
+      <ion-label text-wrap>
+        <h3>{{ item.email }}</h3>
+        {{ item.first_name }} {{ item.last_name }}
+      </ion-label>
+    </ion-item> 
+  </ion-list>  
+</ion-content>
